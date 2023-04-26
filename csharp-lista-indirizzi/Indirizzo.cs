@@ -60,18 +60,18 @@ namespace csharp_lista_indirizzi
 
         // methods
 
-        public string RappresentazioneInStringa()
+        public override string ToString()
         {
-            string rapprStringa = "Nome: " + this.name + "\n";
-            rapprStringa += "Cognome: " + this.surname + "\n";
-            rapprStringa += "Via: " + this.street + "\n";
-            rapprStringa += "Città: " + this.city + "\n";
-            rapprStringa += "Provincia: " + this.province + "\n";
-            rapprStringa += "ZIP: " + this.zip + "\n";
+            string indirizzo = "Nome: " + this.name + "\n";
+            indirizzo += "Cognome: " + this.surname + "\n";
+            indirizzo += "Via: " + this.street + "\n";
+            indirizzo += "Città: " + this.city + "\n";
+            indirizzo += "Provincia: " + this.province + "\n";
+            indirizzo += "ZIP: " + this.zip + "\n";
 
-            rapprStringa += "\n";
+            indirizzo += "\n";
 
-            return rapprStringa;
+            return indirizzo;
         }
     }
 }
