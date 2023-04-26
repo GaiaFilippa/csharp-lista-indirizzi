@@ -13,13 +13,13 @@ while (!file.EndOfStream)
     string rigaDiTestoLetta = file.ReadLine();
     contatoreRigheLette++;
 
-    if (contatoreRigheLette > 0)
+    if (contatoreRigheLette > 1)
     {
         string[] informazioniSeparate = rigaDiTestoLetta.Split(',');
 
         if (informazioniSeparate.Length != 6)
         {
-            Console.WriteLine("La riga " + contatoreRigheLette + "non rispetta lo standard richiesto di 6 informazioni per riga.");
+            Console.WriteLine("La riga " + contatoreRigheLette + " non rispetta lo standard richiesto di 6 informazioni per riga.");
         }
         else
         {
@@ -31,7 +31,7 @@ while (!file.EndOfStream)
             }
             catch (ArgumentException ex)
             {
-                Console.WriteLine("C'è stato un errore nella lettura del,indirizzo in riga n° " + contatoreRigheLette);
+                Console.WriteLine("C'è stato un errore nella lettura dell'indirizzo in riga n° " + contatoreRigheLette);
                 Console.WriteLine("L'errore è: " + ex.Message);
 
             }
