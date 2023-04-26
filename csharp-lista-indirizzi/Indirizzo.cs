@@ -13,11 +13,11 @@ namespace csharp_lista_indirizzi
         private string street;
         private string city;
         private string province;
-        private int zip;
+        private string zip;
 
 
         // costruttore
-        public Indirizzo(string name, string surname, string street, string city, string province, int zip)
+        public Indirizzo(string name, string surname, string street, string city, string province, string zip)
         {
             this.name = name;
             this.surname = surname;
@@ -53,7 +53,7 @@ namespace csharp_lista_indirizzi
             return this.province;
         }
 
-        public int GetZip()
+        public string GetZip()
         {
             return this.zip;
         }

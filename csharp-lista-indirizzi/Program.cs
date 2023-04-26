@@ -3,7 +3,7 @@ using System.Security.AccessControl;
 
 List<Indirizzo> listaIndirizzi = new List<Indirizzo>();
 
-StreamReader file = File.OpenText("C:/Users/Utente/Desktop/Files/addresses.csv");
+StreamReader file = File.OpenText("C:\\Users\\Utente\\source\\repos\\csharp-lista-indirizzi\\csharp-lista-indirizzi\\addresses.csv");
 
 int contatoreRigheLette = 0;
 
@@ -13,7 +13,7 @@ while (!file.EndOfStream)
     string rigaDiTestoLetta = file.ReadLine();
     contatoreRigheLette++;
 
-    if (contatoreRigheLette > 1)
+    if (contatoreRigheLette > 0)
     {
         string[] informazioniSeparate = rigaDiTestoLetta.Split(',');
 
@@ -24,11 +24,9 @@ while (!file.EndOfStream)
         else
         {
 
-            int zipIndirizzo = int.Parse(informazioniSeparate[6]);
-
             try
             {
-                Indirizzo indirizzoAcquisito = new Indirizzo(informazioniSeparate[0], informazioniSeparate[1], informazioniSeparate[2], informazioniSeparate[3], informazioniSeparate[4], zipIndirizzo);
+                Indirizzo indirizzoAcquisito = new Indirizzo(informazioniSeparate[0], informazioniSeparate[1], informazioniSeparate[2], informazioniSeparate[3], informazioniSeparate[4], informazioniSeparate[5]);
                 listaIndirizzi.Add(indirizzoAcquisito);
             }
             catch (ArgumentException ex)
@@ -40,9 +38,9 @@ while (!file.EndOfStream)
         }
     }
 
-    file.Close();
 }
 
+file.Close();
 
-Console.WriteLine(listaIndirizzi.ToString());
+Console.WriteLine(listaIndirizzi);
 
