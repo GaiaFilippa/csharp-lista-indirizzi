@@ -42,5 +42,7 @@ while (!file.EndOfStream)
 
 file.Close();
 
-Console.WriteLine(listaIndirizzi);
-
+foreach (Indirizzo indirizzo in listaIndirizzi)
+{
+    Console.WriteLine(indirizzo);
+}
